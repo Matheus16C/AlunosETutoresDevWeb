@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>BuscaTutores</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <style>
+        .filterable {
+            margin-top: 15px;
+        }
+
+        .filterable .panel-heading .pull-right {
+            margin-top: -20px;
+        }
+
+        .filterable .filters input[disabled] {
+            background-color: transparent;
+            border: none;
+            cursor: auto;
+            box-shadow: none;
+            padding: 0;
+            height: auto;
+        }
+
+        .filterable .filters input[disabled]::-webkit-input-placeholder {
+            color: #333;
+        }
+
+        .filterable .filters input[disabled]::-moz-placeholder {
+            color: #333;
+        }
+
+        .filterable .filters input[disabled]:-ms-input-placeholder {
+            color: #333;
+        }
+
+        div.panel {
+            border: 1px solid #D3D3D3;
+        }
+
+        div.panel-heading {
+            padding: 6px;
+            border: none;
+        }
+
+        table tbody tr:nth-child(2n+1) {
+            background-color: #F0F0F0;
+        }
+
+        .table-hover tbody tr:hover td,
+        .table-hover tbody tr:hover th {
+            background-color: #c4ffc4;
+        }
+
+        .titleFormat {
+            color: #FFF;
+            padding-left: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+            margin-top: 3px;
+        }
+
+        div.panel {
+            border: none;
+        }
+
+        div.panel-heading {
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+        }
+
+        input[type=text] {
+            font-weight: bold;
+        }
+
+        button.btn-filter {
+            color: #000;
+        }
+
+        button.btn-filter:focus {
+            outline: none !important;
+        }
+
+        ul.nav-tabs li a {
+            font-weight: bold !important;
+        }
+
+
+        select.selectClass {
+            background-color: #17a2b8;
+            border-color: #17a2b8;
+            width: 240px;
+            height: 34px;
+            font-weight: bold;
+            color: #FFF;
+            border-radius: 5px;
+            text-align-last: center;
+        }
+
+        .selectOption {
+            color: black;
+            background-color: #FFF;
+        }
+
+        .navbar {
+            margin-bottom: 50px;
+            border-radius: 0;
+        }
+
+        .jumbotron {
+            margin-bottom: 0;
+        }
+
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-info" style="height: 51px !important;">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav ">
+                    <li class="text-white"><a href="">Pagina Inicial</a></li>
+                    <li class="text-white"><a href="">Busca</a></li>
+                    <li class="text-white"><a href="">Minha Carteira</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 style="margin-top: -1%; text-align: center">Busca de tutores</h2>
+
+        <div class="tab-content">
+            <div id="Tutor" class="tab-pane fade in active">
+
+                <div style="width: 780px; margin: auto;">
+                    <div style="float: left; margin-right: 30px;">
+                        <select id="selectProcura" class="selectClass">
+                            <option class="selectOption" style="display: none;" selected>O que procura?</option>
+                            <option class="selectOption">Tutor</option>
+                            <option class="selectOption">Evento</option>
+                        </select>
+                    </div>
+
+                    <div style="float: left; margin-right: 30px;">
+                        <select id="selectDisciplina" class="selectClass">
+                            <option class="selectOption" style="display: none;" selected>Selecione a disciplina</option>
+                            <option class="selectOption">Matemática</option>
+                            <option class="selectOption">Inglês</option>
+                            <option class="selectOption">Geografia</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="float: left; width: 125px; margin-right: 30px;">
+                        <input id="qntdProduto" type="" class="form-control" id="exampleFormControlInput1"
+                            placeholder="Tema (opcional)">
+                    </div>
+
+                    <div style="float: left; width: 85px;">
+                        <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row" style="margin-top: 7%;">
+                        <div class="panel panel-primary filterable">
+                            <div class="panel-heading" style="width: 780px; margin: auto;">
+                                <div style="float: left;">
+                                    <span class="titleFormat">Professores</span>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <table class="table table-hover" style="width: 780px; margin: auto;">
+                                <thead>
+                                    <tr class="filters">
+                                        <th style="width: 34%;"><input type="text" class="form-control"
+                                                placeholder="Tutor" disabled>
+                                        </th>
+                                        <th style="width: 30%;"><input type="text" class="form-control"
+                                                placeholder="Disciplina" disabled>
+                                        </th>
+                                        <th style="width: 22%;"><input type="text" class="form-control"
+                                                placeholder="Nivel" disabled></th>
+                                        <th style="width: 14%;"><input type="text" class="form-control"
+                                                placeholder="Valor" disabled></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bodyPedido">
+                                    <tr>
+                                        <td>Matheus Costa</td>
+                                        <td>Biologia</td>
+                                        <td>Médio</td>
+                                        <td>R$45.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lucas Neves</td>
+                                        <td>Química</td>
+                                        <td>Médio</td>
+                                        <td>R$45.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Natan Cypriano</td>
+                                        <td>Matemática Financeira</td>
+                                        <td>Médio</td>
+                                        <td>R$85.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container" style="text-align: center;">
+        <div class="row">
+            <div class="align-self-end">
+                <button type="submit" class="btn btn-primary mb-2" style="margin: 10px;">Escolher</button>
+                <button type="submit" class="btn btn-primary mb-2" style="margin: 10px;">Voltar</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
