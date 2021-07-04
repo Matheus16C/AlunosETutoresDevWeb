@@ -1,0 +1,232 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Perfil</title>
+
+    <style>
+        
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container-fluid navbar navbar-dark bg-primary">
+            <div id="myNavbar">
+                <ul class="nav navbar-nav collapse navbar-collapse">
+                    <li style="margin-left: -20px; font-size: 18pt"><a>Alunos e Tutores</a></li>
+                </ul>
+                <ul class="nav navbar-nav collapse navbar-collapse">
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="carteira.html">Minha Carteira</a></li>
+                    <li><a href="area_tutor.html">Área do Tutor</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="text-align: right; margin-right:100px">
+        <div style="display: inline-block; margin-right: 10px;vertical-align:middle">
+            <p style="color:black; margin-bottom: 0px">Olá, Tutor!</p>
+            <div>
+                <a style="color:black">Perfil</a> | 
+                <a style="color:black">Sair</a>
+            </div>
+        </div>
+        <div style="display: inline-block; vertical-align:middle">
+            <img src="avatar_tutor.png" width="80" height="80">
+        </div>
+    </div>
+
+    <h2 align="center">Perfil</h2>
+
+   
+    <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+    <form action="">
+    <div class="panel panel-default main form-group">
+        <div class="panel-body">
+            <div class="row" style="padding-top: 10px;">
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <h3>Informações pessoais</h3>
+                </div>
+            </div>
+<br>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Nome:</label>
+                        <input type="text" id="nome" name="nome" class="form-control" required>
+                    </div>
+                </div>
+    
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Sobrenome:</label>
+                        <input type="text" id="sobrenome" name="sobrenome" class="form-control" required>
+                    </div>
+                </div>
+    
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>CPF:</label>
+                        <input type="number" id="cpf" name="cpf" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>E-mail:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                </div>
+    
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Gênero:</label>
+                        <input type="text" id="sobrenome" name="sobrenome" class="form-control" required>
+                    </div>
+                </div>
+    
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Data de Nascimento:</label>
+                        <input type="date" id="dt_nascimento" name="dt_nascimento" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+            <br>
+    
+            <div class="row form-group">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <label for="cep">CEP</label>
+                    <input type="text" class="form-control" id="cep">
+                </div>
+                
+                <div class="col-md-3">
+                    <label for="pais">País</label>
+                    <input type="text" class="form-control" id="pais">
+                </div>
+                <div class="col-md-3">
+                        <label for="estado">Estado</label>
+                        <input type="text" class="form-control" name="estado" id="estado">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" class="form-control" id="cidade">
+                </div>
+                
+                <div class="col-md-3">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" class="form-control" id="bairro">
+                </div>
+            </div>
+            <div class="row form-group" style="margin-top: 12px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <label for="rua">Rua</label>
+                    <input type="text" class="form-control" name="rua" id="rua">
+                </div>
+                <div class="col-md-1">
+                    <label for="numero">Número</label>
+                    <input type="text" class="form-control" name="numero" id="numero">
+                </div>
+            </div>
+            <div class="row form-group" style="margin-top: 12px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <label for="rua">Foto</label>
+                    <input type="file" name="foto" id="foto">
+                </div>
+            </div>
+            <div class="row" style="padding-top: 10px;">
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <h3>Informações Acadêmicas</h3>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 12px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <label for="formacao">Formação</label>
+                    <div class="form-inline">
+                        <input type="text" class="form-control" style="margin-right: 20px; padding-right: 12%;" name="formacao" id="formacao">
+                        <input type="checkbox" class="form-check-input" style="margin-right: 10px;" value="">Não possuo formação
+                    </div>
+                </div>
+                <div class="form-check"> 
+                </div>
+            </div>
+            <div class="row" style="margin-top: 12px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="sel1">Nível de interesse</label>
+                        <select class="form-control" id="sel1">
+                            <option>Selecione...</option>
+                            <option>Ensino fundamental</option>
+                            <option>Ensino médio</option>
+                            <option>Curso</option>
+                            <option>Curso tecnico</option>
+                            <option>Ensino superior</option>
+                            <option>Mestrado</option>
+                            <option>Curso profissionalizante</option>
+                            <option>Pos graduação</option>
+                            <option>Curso de línguas</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                        <label for="discp">Displinas de interesse</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="discp" id="discp">
+                        
+                            <div class="input-group-btn">
+                                <button class="btn btn-success" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" class="bi bi-patch-plus-fill" viewBox="0 0 16 16">
+                                    <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zM8.5 6v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 1 0z"/>
+                                </svg></button>
+                            </div>
+                              
+                        </div>
+                </div>
+                
+                
+                
+            </div>
+            <div class="row" style="margin-top: 5em;">
+                <div class="col-md-9"></div>
+                <div class="col-md-1">
+                    <button type="submit" class="btn btn-primary">Atualizar</button>
+                </div>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-danger">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </form>
+    </div>
+    
+</body>
+
+</html>
