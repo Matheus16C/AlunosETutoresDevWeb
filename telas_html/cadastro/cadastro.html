@@ -50,7 +50,7 @@
     <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-    <form action="">
+    <form name="form_cadastro" method="POST" action="../../backend/cadastro/Cadastro.php">
     <div class="panel panel-default main form-group">
         <div class="panel-body">
             <div class="row" style="padding-top: 10px;">
@@ -64,7 +64,7 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-3">
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" id="email" placeholder="exemple@gmail.com">
+                    <input type="text" name="email" class="form-control" id="email" placeholder="exemple@gmail.com">
                 </div>
 
             </div>
@@ -72,7 +72,7 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-3">
                     <label for="senha">Senha</label>
-                    <input type="password" class="form-control" id="senha">
+                    <input type="password" name="senha" class="form-control" id="senha">
                 </div>
                 <div class="col-md-3">
                     <label for="confsenha">Comfirmar senha</label>
@@ -91,11 +91,11 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-3">
                     <label for="nome">Nome</label>
-                    <input type="text" class="form-control" id="nome">
+                    <input type="text" name="nome" class="form-control" id="nome">
                 </div>
                 <div class="col-md-4">
                     <label for="sobrenome">Sobrenome</label>
-                    <input type="text" class="form-control" id="sobrenome">
+                    <input type="text" name="sobrenome" class="form-control" id="sobrenome">
                 </div>
                
             </div>
@@ -103,7 +103,7 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-3">
                     <label for="cpf">CPF</label>
-                    <input type="text" class="form-control" id="cpf">
+                    <input type="text" nome="cpf" class="form-control" id="cpf">
                 </div>
             </div>
             <div class="row form-group" style="margin-top: 20px;">
@@ -126,12 +126,12 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-2">
                     <label for="cep">CEP</label>
-                    <input type="text" class="form-control" id="cep">
+                    <input type="text" class="form-control" name="cep" id="cep">
                 </div>
                 
                 <div class="col-md-3">
                     <label for="pais">Pais</label>
-                    <input type="text" class="form-control" id="pais">
+                    <input type="text" name="pais" class="form-control" id="pais">
                 </div>
                 <div class="col-md-2">
                         <label for="estado">Estado</label>
@@ -142,12 +142,12 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-2">
                     <label for="cidade">Cidade</label>
-                    <input type="text" class="form-control" id="cidade">
+                    <input type="text" class="form-control" name="cidade" id="cidade">
                 </div>
                 
                 <div class="col-md-3">
                     <label for="bairro">Bairro</label>
-                    <input type="text" class="form-control" id="bairro">
+                    <input type="text" name="bairro" class="form-control" id="bairro">
                 </div>
             </div>
             <div class="row form-group" style="margin-top: 12px;">
@@ -184,7 +184,7 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="sel1">Nivel de interesse</label>
-                        <select class="form-control" id="sel1">
+                        <select class="form-control" name="nivel" id="sel1">
                             <option>Selecione...</option>
                             <option>Ensino fundamental</option>
                             <option>Ensino médio</option>
