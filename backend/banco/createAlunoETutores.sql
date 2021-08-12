@@ -171,10 +171,6 @@ insert into usuario (nome, cpf, datanascimento, email, senha, endereco, tipo, fo
 
 select * from usuario u;
 
-UPDATE usuario 
-	SET foto = 'assets/avatar_aluno.jpg'
-	where tipo = 1;
-
 insert into instituicao (nome) values 
 	('IFES'), ('UFES'), ('FAESA'), ('Centro de Linguas');
 
