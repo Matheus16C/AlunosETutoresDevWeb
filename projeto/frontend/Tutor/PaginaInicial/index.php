@@ -139,6 +139,7 @@
 
                                         <button class="btn btn-success">Aceitar</button>
                                         <button class="btn btn-danger">Recusar</button>
+                                        
                                     </div>
                                     </div>
                                     </div>
@@ -216,8 +217,8 @@
                                                 ?>
                                               </h5>
 
-                                              <button type="button" class="btn btn-success">Aceitar</button>
-                                              <button type="button" class="btn btn-danger">Recusar</button>
+                                              <button class="btn btn-success">Aceitar</button>
+                                              <button class="btn btn-danger">Recusar</button>
                                               </div>
                                               </div>
                                             </div>
@@ -240,8 +241,141 @@
                      ?>   
                       </div>
                       </div>    
-                    
-                      <div class="tab-pane" id="aulas">link</div>
+                      <?php include '../../../backend/Tutor/PaginaInicial/aceito.php' ?>
+                      <div class="tab-pane" id="aulas">                       
+                       <div class="container">
+                                <div class="row">
+                                
+                                    <div class="col-md-4 cardmargin">
+                                      <div class="card">
+                                        <div class="card-body cardpadding">  
+                                        <h3>
+                                          <?php
+                                            echo $rs['aluno'];
+                                          ?>
+                                        </h3>
+                                        <h5>
+                                          <?php
+                                            echo $rs['area'];
+                                          ?>
+                                        </h5>
+                                        <p>
+                                          <?php
+                                            echo $rs['comentario'];
+                                          ?>
+                                        </p>
+                                        <h5>
+                                          Data: 
+                                          <?php
+                                            echo $rs['dataaula'];
+                                          ?>
+                                          Duração: 
+                                          <?php
+                                            echo $rs['duracao'];
+                                          ?>
+                                        </h5>
+
+                                        <button class="btn btn-success">Cancelar</button>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <?php
+                                      while($row = pg_fetch_assoc($result)){
+                                        if($cont%2==0){
+                                          ?>
+                                            
+                                            <div class="row">
+                                              <div class="col-md-4 cardmargin">
+                                                <div class="card">
+                                                <div class="card-body cardpadding">    
+                                                  <h3>
+                                                    <?php
+                                                      echo $row['aluno'];
+                                                    ?>
+                                                  </h3>
+                                                  <h5>
+                                                    <?php
+                                                      echo $row['area'];
+                                                    ?>
+                                                  </h5>
+                                                  <p>
+                                                    <?php
+                                                      echo $row['comentario'];
+                                                    ?>
+                                                  </p>
+                                                  <h5>
+                                                    Data: 
+                                                    <?php
+                                                      echo $row['dataaula'];
+                                                    ?>
+                                                    Duração: 
+                                                    <?php
+                                                      echo $row['duracao'];
+                                                    ?>
+                                                  </h5>
+
+                                                  <button class="btn btn-success">Cancelar</button>
+                                                </div>
+                                                </div>
+                                              </div>
+                                              
+
+                                          <?php
+                                        }else{
+                                          ?>
+                                            <div class="col-md-4 cardmargin">
+                                              <div class="card">
+                                              <div class="card-body cardpadding">    
+                                              <h3>
+                                                <?php
+                                                  echo $row['aluno'];
+                                                ?>
+                                              </h3>
+                                              <h5>
+                                                <?php
+                                                  echo $row['area'];
+                                                ?>
+                                              </h5>
+                                              <p>
+                                                <?php
+                                                  echo $row['comentario'];
+                                                ?>
+                                              </p>
+                                              <h5>
+                                                Data: 
+                                                <?php
+                                                  echo $row['dataaula'];
+                                                ?>
+                                                Duração: 
+                                                <?php
+                                                  echo $row['duracao'];
+                                                ?>
+                                              </h5>
+
+                                              <button class="btn btn-success">Cancelar</button>
+                                              </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <?php
+
+                                        }
+                                         $cont = $cont +1;
+                                      }
+                                    ?> 
+                     <?php 
+                      if($cont%2!=0){
+                        
+                      ?>
+                        
+                        </div>
+                       <?php 
+                      }
+                      
+                     ?>   
+                      </div>
+                      
+                      </div>
                       <div class="tab-pane" id="alunos">link</div>
                 </div>
               </div>

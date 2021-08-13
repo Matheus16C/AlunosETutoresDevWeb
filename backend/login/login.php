@@ -12,12 +12,12 @@
             return $this->senha;
         }
         
-        public function setLogin(string _login) {
-            $this->login = _login;
+        public function setLogin(string $_login) {
+            $this->login = $_login;
         }
         
-        public funtion setSenha(string _senha) {
-            $this->senha = _senha;
+        public function setSenha(string $_senha) {
+            $this->senha = $_senha;
         }
     }
 ?>
