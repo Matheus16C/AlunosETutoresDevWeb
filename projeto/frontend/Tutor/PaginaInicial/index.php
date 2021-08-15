@@ -87,24 +87,24 @@
                 <div class="card-header" style="border-bottom-style: none; padding-bottom: 10px;" >
                     <ul class="nav nav-tabs card-header-tabs" id="tabs">
                         <li class="nav-item">
-                            <a style="color:black" class="active nav-link active" href="#resumo" data-toggle="tab">Resumo</a>
+                            <a style="color:black" class="active nav-link active" href="#aguardandoAceitacao" data-toggle="tab">Aguardando Aceitação</a>
                         </li>
                         <!---li class="nav-item">
                             <a style="color:black" class="nav-link" href="#link" data-toggle="tab">Feed</a>
                         </li-->
                         <li class="nav-item">
-                            <a style="color:black" class="nav-link" href="#aulas" data-toggle="tab">Aulas</a>
+                            <a style="color:black" class="nav-link" href="#aulasIndividuais" data-toggle="tab">Aulas Individuais</a>
                         </li>
                         <li class="nav-item">
-                            <a style="color:black" class="nav-link" href="#alunos" data-toggle="tab">Alunos</a>
+                            <a style="color:black" class="nav-link" href="#aulasColetivas" data-toggle="tab">Aulas Coletivas</a>
                         </li>
                     </ul>
                 </div>
-                <?php include '../../../backend/Tutor/PaginaInicial/Solicitacoes.php' ?>
+                <?php include '../../../backend/Tutor/PaginaInicial/aulasAguardandoAceitacao.php' ?>
 
                 <div class="card-body" style="background-color:#f5f5f5;">
                     <div class="tab-content">
-                        <div class="tab-pane active" id="resumo">
+                        <div class="tab-pane active" id="aguardandoAceitacao">
                             <div class="container">
                                 <div class="row">
                                 
@@ -241,8 +241,8 @@
                      ?>   
                       </div>
                       </div>    
-                      <?php include '../../../backend/Tutor/PaginaInicial/aceito.php' ?>
-                      <div class="tab-pane" id="aulas">                       
+                      <?php include '../../../backend/Tutor/PaginaInicial/aulasIndividuaisAceitas.php' ?>
+                      <div class="tab-pane" id="aulasIndividuais">                       
                        <div class="container">
                                 <div class="row">
                                 
@@ -275,7 +275,7 @@
                                           ?>
                                         </h5>
 
-                                        <button class="btn btn-success">Cancelar</button>
+                                        <button class="btn btn-danger">Cancelar</button>
                                     </div>
                                     </div>
                                     </div>
@@ -314,7 +314,7 @@
                                                     ?>
                                                   </h5>
 
-                                                  <button class="btn btn-success">Cancelar</button>
+                                                  <button class="btn btn-danger">Cancelar</button>
                                                 </div>
                                                 </div>
                                               </div>
@@ -352,7 +352,7 @@
                                                 ?>
                                               </h5>
 
-                                              <button class="btn btn-success">Cancelar</button>
+                                              <button class="btn btn-danger">Cancelar</button>
                                               </div>
                                               </div>
                                             </div>
@@ -376,7 +376,144 @@
                       </div>
                       
                       </div>
-                      <div class="tab-pane" id="alunos">link</div>
+                      <?php include '../../../backend/Tutor/PaginaInicial/aulasColetivas.php' ?>
+                      <div class="tab-pane" id="aulasColetivas">
+                      <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 cardmargin">
+                              <div class="card">
+                                <div class="card-body cardpadding">  
+                                <h3>
+                                  <?php
+                                    echo $rs['area'];
+                                  ?>
+                                </h3>
+                                <h5>
+                                  <?php
+                                    echo $rs['descricao'];
+                                  ?>
+                                </h5>
+                                <p>
+                                  Quantidade de alunos inscritos:
+                                  <?php
+                                    echo $rs['qtd_alunos'];
+                                  ?>
+                                </p>
+                                <h5>
+                                  Data: 
+                                  <?php
+                                    echo $rs['dataaula'];
+                                  ?>
+                                  Duração: 
+                                  <?php
+                                    echo $rs['duracao'];
+                                  ?>
+                                </h5>
+
+                                <button class="btn btn-danger">Cancelar</button>
+                            </div>
+                            </div>
+                            </div>
+                            <?php
+                              while($row = pg_fetch_assoc($result)){
+                                if($cont%2==0){
+                                  ?>
+                                    
+                                    <div class="row">
+                                      <div class="col-md-4 cardmargin">
+                                        <div class="card">
+                                        <div class="card-body cardpadding">    
+                                          <h3>
+                                            <?php
+                                              echo $row['area'];
+                                            ?>
+                                          </h3>
+                                          <h5>
+                                            <?php
+                                              echo $row['descricao'];
+                                            ?>
+                                          </h5>
+                                          <p>
+                                            Quantidade de alunos inscritos:
+                                            <?php
+                                              echo $row['qtd_alunos'];
+                                            ?>
+                                          </p>
+                                          <h5>
+                                            Data: 
+                                            <?php
+                                              echo $row['dataaula'];
+                                            ?>
+                                            Duração: 
+                                            <?php
+                                              echo $row['duracao'];
+                                            ?>
+                                          </h5>
+
+                                          <button class="btn btn-danger">Cancelar</button>
+                                        </div>
+                                        </div>
+                                      </div>
+                                      
+
+                                  <?php
+                                }else{
+                                  ?>
+                                    <div class="col-md-4 cardmargin">
+                                      <div class="card">
+                                      <div class="card-body cardpadding">    
+                                      <h3>
+                                        <?php
+                                          echo $row['area'];
+                                        ?>
+                                      </h3>
+                                      <h5>
+                                        <?php
+                                          echo $row['descricao'];
+                                        ?>
+                                      </h5>
+                                      <p>
+                                        Quantidade de alunos inscritos:
+                                        <?php
+                                          echo $row['qtd_alunos'];
+                                        ?>
+                                      </p>
+                                      <h5>
+                                        Data: 
+                                        <?php
+                                          echo $row['dataaula'];
+                                        ?>
+                                        Duração: 
+                                        <?php
+                                          echo $row['duracao'];
+                                        ?>
+                                      </h5>
+
+                                      <button class="btn btn-danger">Cancelar</button>
+                                      </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <?php
+
+                                }
+                                  $cont = $cont +1;
+                              }
+                            ?> 
+                     <?php 
+                      if($cont%2!=0){
+                        
+                      ?>
+                        
+                        </div>
+                       <?php 
+                      }
+                      
+                     ?>   
+                      </div>
+                      
+                      </div>
+                      
                 </div>
               </div>
               </div>
