@@ -20,6 +20,12 @@ solicitada = 1 (para que professor aceite)
 <br>finalizada = 3
 <br>cancelada = 4
 
+### Na tabela aulaindividual e aulacoletiva o campo status:
+
+Possibilitando inscrições = 1
+<br>finalizada = 2
+<br>cancelada = 3
+
 ### Na tabela avaliacao_aulaindividual e avaliacao_aulacoletiva o campo status:
 
 nota equivale ao numero de estrelas;
