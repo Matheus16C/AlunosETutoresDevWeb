@@ -1,0 +1,235 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Alunos e Tutores</title>
+
+    <style>
+        
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container-fluid navbar navbar-dark bg-primary">
+            <div id="myNavbar" class="row">
+                <div class="col-md-2">
+                <ul class="nav navbar-nav collapse navbar-collapse">
+                    <li style="margin-left: -30px; font-size: 20pt"><a>Alunos e Tutores</a></li>
+                </ul>
+                </div>
+                <div class="col-md-9"></div>
+                <div class="col-md-1">
+                    <ul class="nav navbar-nav collapse navbar-collapse">
+                        <li>
+                            <a>Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-6">
+            <h1>
+                Cadastre-se e comece a aprender!
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+    <form name="form_cadastro" method="POST" action="../../backend/cadastro/Cadastro.php">
+    <div class="panel panel-default main form-group">
+        <div class="panel-body">
+            <div class="row" style="padding-top: 10px;">
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <h3>Informações de cadastro</h3>
+                </div>
+            </div>
+        
+            <div class="row form-group" style="margin-top: 10px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" class="form-control" id="email" placeholder="exemple@gmail.com">
+                </div>
+
+            </div>
+            <div class="row form-group" style="margin-top: 10px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" class="form-control" id="senha">
+                </div>
+                <div class="col-md-3">
+                    <label for="confsenha">Comfirmar senha</label>
+                    <input type="password" class="form-control" id="confsenha">
+                </div>
+               
+            </div>
+        
+            <div class="row" style="padding-top: 10px;">
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <h3>Informações pessoais</h3>
+                </div>
+            </div>
+            <div class="row form-group" style="margin-top: 10px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" class="form-control" id="nome">
+                </div>
+                <div class="col-md-4">
+                    <label for="sobrenome">Sobrenome</label>
+                    <input type="text" name="sobrenome" class="form-control" id="sobrenome">
+                </div>
+               
+            </div>
+            <div class="row form-group" style="margin-top: 10px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <label for="cpf">CPF</label>
+                    <input type="text" name="cpf" class="form-control" id="cpf">
+                </div>
+            </div>
+            <div class="row form-group" style="margin-top: 20px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                    <label style="margin-right: 10px;">Gênero</label>
+                    <label class="radio-inline"><input type="radio" name="genero" value="1">Feminino</label>
+                    <label class="radio-inline"><input type="radio" name="genero" value="2">Masculino</label>
+                    <label class="radio-inline"><input type="radio" name="genero" value="3">Outros</label>
+                </div>   
+            </div>
+            <div class="row form-group" style="margin-top: 12px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-2">
+                    <label for="datanascimento">Data de nascimento</label>
+                    <input type="date" class="form-control" name="datanascimento" id="datanascimento">
+                </div>
+            </div>
+            <div class="row form-group" style="margin-top: 10px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-2">
+                    <label for="cep">CEP</label>
+                    <input type="text" class="form-control" name="cep" id="cep">
+                </div>
+                
+                <div class="col-md-3">
+                    <label for="pais">Pais</label>
+                    <input type="text" name="pais" class="form-control" id="pais">
+                </div>
+                <div class="col-md-2">
+                        <label for="estado">Estado</label>
+                        <input type="text" class="form-control" name="estado" id="estado">
+                </div>
+            </div>
+            <div class="row form-group" style="margin-top: 10px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-2">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" class="form-control" name="cidade" id="cidade">
+                </div>
+                
+                <div class="col-md-3">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" name="bairro" class="form-control" id="bairro">
+                </div>
+            </div>
+            <div class="row form-group" style="margin-top: 12px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <label for="rua">Rua</label>
+                    <input type="text" class="form-control" name="rua" id="rua">
+                </div>
+                <div class="col-md-1">
+                    <label for="numero">Numero</label>
+                    <input type="text" class="form-control" name="numero" id="numero">
+                </div>
+            </div>
+            <div class="row" style="padding-top: 10px;">
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <h3>Informações Acadêmicas</h3>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 12px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <label for="formacao">Formação</label>
+                    <div class="form-inline">
+                        <input type="text" class="form-control" style="margin-right: 20px; padding-right: 12%;" name="formacao" id="formacao">
+                        <input type="checkbox" class="form-check-input" style="margin-right: 10px;" for=formacao value="Não possue">Não possuo formação
+                    </div>
+                </div>
+                <div class="form-check"> 
+                </div>
+            </div>
+            <div class="row" style="margin-top: 12px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="sel1">Nivel de interesse</label>
+                        <select class="form-control" name="nivel" id="sel1">
+                            <option>Selecione...</option>
+                            <option value="Ensino fundamental">Ensino fundamental</option>
+                            <option value="Ensino médio">Ensino médio</option>
+                            <option value="Curso">Curso</option>
+                            <option value="Curso tecnico">Curso tecnico</option>
+                            <option value="Ensino superior">Ensino superior</option>
+                            <option value="Mestrado">Mestrado</option>
+                            <option value="Curso profissionalizante">Curso profissionalizante</option>
+                            <option value="Pos graduação">Pos graduação</option>
+                            <option value="Curso de línguas">Curso de línguas</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                        <label for="discp">Displinas de interesse</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="discp" id="discp">
+                        
+                            <div class="input-group-btn">
+                                <button class="btn btn-success" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" class="bi bi-patch-plus-fill" viewBox="0 0 16 16">
+                                    <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zM8.5 6v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 1 0z"/>
+                                </svg></button>
+                            </div>
+                              
+                        </div>
+                </div>
+                
+                
+                
+            </div>
+            <div class="row" style="margin-top: 5em;">
+                <div class="col-md-8"></div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary">Confirmar</button>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-danger">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </form>
+    </div>
+    
+</body>
+
+</html>
