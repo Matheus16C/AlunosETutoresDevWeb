@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Alunos e Tutores</title>
+
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container-fluid navbar navbar-dark bg-primary">
+            <div id="myNavbar" class="row">
+                <div class="col-md-2">
+                    <ul class="nav navbar-nav collapse navbar-collapse">
+                        <li style="margin-left: -30px; font-size: 20pt"><a>Alunos e Tutores</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-9"></div>
+                <div class="col-md-1">
+                    <ul class="nav navbar-nav collapse navbar-collapse">
+                        <li>
+                            <a>Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-6">
+            <h1>
+                Cadastro de aula coletiva
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form name="form_cadastro" method="POST" action="../../backend/AulaColetiva/CadastroAulaColetiva.php">
+                <div class="panel panel-default main form-group">
+                    <div class="panel-body">
+                        <div class="row" style="padding-top: 10px;">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <h3>Criar Evento</h3>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row form-group" style="margin-top: 10px;">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-3">
+                                <label for="Tutor">Conteúdo:</label>
+                                <input type="text" name="conteudo" class="form-control" id="conteudo" value="1" readonly>
+                                <br>
+                                <label for="Descricao">Descricao do evento:</label>
+                                <textarea name="descricao" class="form-control" id="descricao"></textarea>
+                                <br>
+                                <label for="data">Data:</label>
+                                <input type="date" class="form-control" name="data" id="data">
+                                <br>
+                                <label for="horario">Hora:</label>
+                                <input type="time" class="form-control" name="hora" id="hora">
+                                <br>
+                                <label for="duracao">Duração:</label>
+                                <input type="time" name="duracao" class="form-control" id="duracao">
+                                <br>
+                                <label for="duracao">URL:</label>
+                                <input type="text" name="url" class="form-control" id="url">
+                            </div>
+                        </div>
+                       <!--  <div class="row form-group" style="margin-top: 10px;">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-5">
+                                <label for="obs">Observações da aula:</label>
+                                <textarea type="text" name="obs" class="form-control" id="obs"
+                                    placeholder="Digite aqui uma observação" rows="7" maxlength="350"></textarea>
+                            </div>
+                        </div> -->
+                        <div class="row" style="margin-top: 5em;">
+                            <div class="col-md-8"></div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-primary">Agendar</button>
+                                <button type="button" class="btn btn-danger">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
