@@ -63,27 +63,12 @@
                 </ul>
                 <ul class="nav navbar-nav collapse navbar-collapse">
                     <li><a href="#">Página Inicial</a></li>
+                    <li><a href="#">Busca</a></li>
                     <li><a href="#">Minha Carteira</a></li>
-                    <li><a href="#">Área do tutor</a></li>
-                    <li><a href="#">Eventos</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <!--div class="container" style="text-align: right; margin-right:100px">
-        <div style="display: inline-block; margin-right: 10px;vertical-align:middle">
-            <p style="color:black; margin-bottom: 0px">Olá, Aluno!</p>
-            <div>
-                <a style="color:black">Perfil</a> | 
-                <a style="color:black">Sair</a>
-            </div>
-        </div>
-        <div style="display: inline-block; vertical-align:middle">
-            <img src="avatar_aluno.jpg" width="80" height="80">
-        </div>
-
-    </div-->
 
     <div class="container">
         <div class="row">
@@ -100,9 +85,12 @@
                             <li class="nav-item">
                                 <a style="color:black" class="nav-link active" href="#aulasIndividuais" data-toggle="tab">Aulas Individuais</a>
                             </li>
-                            <!-- <li class="nav-item">
+                            <li class="nav-item">
                                 <a style="color:black" class="nav-link" href="#aulasColetivas" data-toggle="tab">Aulas Coletivas</a>
-                            </li> -->
+                            </li>
+                            <li class="nav-item">
+                                <a style="color:black" class="nav-link" href="#aulasEncerradas" data-toggle="tab">Aulas Encerradas</a>
+                            </li>
                         </ul>
                     </div>
                     
@@ -111,7 +99,7 @@
                         <div class="tab-content">
                             
                             
-                        <?php include '../../../backend/Aluno/PaginaInicial/AulasColetivasInscricao.php' ?>
+                            <?php include '../../../backend/Aluno/PaginaInicial/AulasColetivasInscricao.php' ?>
                             <div class="tab-pane active" id="aulasIndividuais">
                                 <div class="container">
                                     <div class="row">
@@ -245,6 +233,7 @@
                                 ?>
                                 </div>
 
+                            
                             </div>
                             <?php include '../../../backend/Tutor/PaginaInicial/aulasColetivas.php' ?>
                             <div class="tab-pane" id="aulasColetivas">
@@ -384,6 +373,32 @@
 
                             </div>
 
+                            <div class="tab-pane" id="aulasEncerradas">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-4 cardmargin">
+                                            <div class="card">
+                                                <div class="card-body cardpadding">
+                                                    <h3>
+                                                        Matheus Costa
+                                                    </h3>
+                                                    <h5>
+                                                        Álgebra linear
+                                                    </h5>
+                                                    <p>
+                                                        Aula de determinantes
+                                                    </p>
+                                                    <h5>
+                                                        Data: 24/08/2021
+                                                        Duração: 1 horas
+                                                    </h5>
+                                                    <a href="../Avaliacao/avaliarTutoria.php" class="btn btn-success">Avaliar agora</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
