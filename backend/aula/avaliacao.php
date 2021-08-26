@@ -5,11 +5,11 @@
   class Avaliacao {
     
     public $nota;
-    public $observacao;
+    public $comentario;
     
-    public function __construct(string $nota, float $observacao){
-      $this->data = $nota;
-      $this->link = $observacao;
+    public function __construct(string $nota, string $comentario){
+      $this->nota = $nota;
+      $this->comentario = $comentario;
     }
 
     public function getNota() {
@@ -20,12 +20,12 @@
         $this->nota = $nota;
     }
 
-    public function getObservacao() {
-        return $this->observacao;
+    public function getComentario() {
+        return $this->comentario;
        }
    
-    public function setObservacao(float $observacao) {
-        $this->observacao = $observacao;
+    public function setComentario(string $comentario) {
+        $this->comentario = $comentario;
     }
         
     }
