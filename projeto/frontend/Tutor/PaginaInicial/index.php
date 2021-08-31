@@ -1,5 +1,7 @@
+<?php
+if (!isset($_SESSION)) session_start();
+?>
 <html>
-
 <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -110,7 +112,19 @@
                                 
                                     <div class="col-md-4 cardmargin">
                                       <div class="card">
-                                        <div class="card-body cardpadding">  
+                                        <div class="card-body cardpadding"> 
+                                          <?php
+                                            if  (!$result) {
+                                              echo "query did not execute";
+                                              exit;
+                                            }
+                                            $rs = pg_fetch_assoc($result);
+                                            if (!$rs) {
+                                              echo "Nenhuma aula para aprovação";
+                                              
+                                            }else{
+                                              
+                                          ?> 
                                         <h3>
                                           <?php
                                             echo $rs['aluno'];
@@ -139,7 +153,8 @@
 
                                         <button class="btn btn-success">Aceitar</button>
                                         <button class="btn btn-danger">Recusar</button>
-                                        
+                                        <?php }
+                                        $cont=1?>
                                     </div>
                                     </div>
                                     </div>
@@ -247,8 +262,21 @@
                                 <div class="row">
                                 
                                     <div class="col-md-4 cardmargin">
+                                      
                                       <div class="card">
-                                        <div class="card-body cardpadding">  
+                                        <div class="card-body cardpadding"> 
+                                        <?php
+                                            if  (!$result) {
+                                              echo "query did not execute";
+                                              exit;
+                                            }
+                                            $rs = pg_fetch_assoc($result);
+                                            if (!$rs) {
+                                              echo "Nenhuma aula para aprovação";
+                                              
+                                            }else{
+                                              
+                                          ?> 
                                         <h3>
                                           <?php
                                             echo $rs['aluno'];
@@ -276,9 +304,12 @@
                                         </h5>
 
                                         <button class="btn btn-danger">Cancelar</button>
+                                        <?php }
+                                        $cont=1?>
                                     </div>
                                     </div>
                                     </div>
+                                    
                                     <?php
                                       while($row = pg_fetch_assoc($result)){
                                         if($cont%2==0){
@@ -382,7 +413,18 @@
                         <div class="row">
                             <div class="col-md-4 cardmargin">
                               <div class="card">
-                                <div class="card-body cardpadding">  
+                                <div class="card-body cardpadding"> 
+                                <?php
+                                    if  (!$result) {
+                                      echo "query did not execute";
+                                      exit;
+                                    }
+                                    $rs = pg_fetch_assoc($result);
+                                    if (!$rs) {
+                                      echo "Nenhuma aula para aprovação";
+                                      
+                                    }else{  
+                                  ?>
                                 <h3>
                                   <?php
                                     echo $rs['area'];
@@ -411,6 +453,8 @@
                                 </h5>
 
                                 <button class="btn btn-danger">Cancelar</button>
+                                <?php }
+                                $cont=1?>
                             </div>
                             </div>
                             </div>
@@ -518,7 +562,14 @@
               </div>
               </div>
             </div>
+            <?php
             
+            $id_sessao = $_SESSION['UsuarioID'];
+            $query = "select foto from usuario where '$id_sessao' = usuario_id";
+            $result = pg_query($conexao, $query);
+            $rs = pg_fetch_assoc($result);
+            $nome = explode(" ",$_SESSION['UsuarioNome']);
+            ?>
             
             <div class="col-md-3"> 
                 <div style="text-align: center; margin-bottom: 40px; margin-top: 20px">
@@ -527,11 +578,11 @@
                         <p style="color:black; margin-bottom: 0px">Olá, <?php echo $nome[0]; ?>!</p>
                         <div>
                             <a style="color:black">Perfil</a> | 
-                            <a style="color:black">Sair</a>
+                            <a style="color:black" href="../../../backend/login/logout.php">Sair</a>
                         </div>
                     </div>
                     <div style="display: inline-block; vertical-align:middle">
-                        <img src=<?php echo "../../../" . $tutor['foto']; ?> width="80" height="80">
+                        <img src=<?php echo "../../../" . $rs['foto']; ?> width="80" height="80">
                     </div>
                 
                 </div>
